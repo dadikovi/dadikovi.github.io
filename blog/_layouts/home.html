@@ -1,0 +1,59 @@
+---
+layout: default
+---
+
+<div class="row">
+    <div class="col-md mb-5">
+        <h2 class="mb-5">Education and Experience</h2>
+        <ul>
+            <li>
+                <h6 class="text-primary">Java Developer @ <a href="http://transferwise.com">Transferwise</a></h6>
+                <span class="text-secondary">2020 – present</span>
+            </li>
+            <li>
+                <h6 class="text-primary">Senior Software Engineer @ <a href="http://loxon.eu">Loxon</a></h6>
+                <span class="text-secondary">2016 – 2020</span>
+            </li>
+            <li>
+                <h6 class="text-primary">Computer Science Engineer BSc @ Budapest University of Technology and Economics</h6>
+                <span class="text-secondary">2013 - 2017</span>
+            </li>
+        </ul>
+    </div>
+    <div class="col-md mb-5">
+        <h2 class="mb-5">Blog</h2>
+        {% if site.paginate %}
+        {% assign posts = paginator.posts %}
+        {% else %}
+        {% assign posts = site.posts %}
+        {% endif %}
+        {%- if posts.size > 0 -%}
+        <ul class="post-list">
+            {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+            {%- for post in posts -%}
+            <li>
+                <h6 class="text-primary">
+                    <a class="post-link" href="{{ post.url | relative_url }}">
+                        {{ post.title | escape }}
+                    </a>
+                </h6>
+                <span class="text-secondary">{{ post.date | date: date_format }}</span>
+                {%- if site.show_excerpts -%}
+                {{ post.excerpt }}
+                {%- endif -%}
+            </li>
+            {%- endfor -%}
+        </ul>
+
+        {%- endif -%}
+    </div>
+</div>
+<div class="row">
+    <div class="col-md mb-5">
+        <h2 class="mb-5">Skills</h2>
+        <!-- skills -->
+    </div>
+    <div class="col-md">
+        <h2 class="mb-5">Fun projects</h2>
+    </div>
+</div>
