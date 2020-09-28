@@ -12,4 +12,26 @@ While this approach do have some advantages (for example there is not a single p
 
 ## Domain-driven end to end teams
 
-My opinion is that it is much better to organize people around a specific domain (or a set of similiar domains). The goal is 
+My opinion is that it is much better to organize people around a specific domain (or a set of similiar domains), so that the tasks of the team will:
+
+- **have the same complexity level**
+
+    for example a team shouldn't work on a specific component (eg. a library) and at the same time on a solution which is based on several other components (eg. a microservice)
+    
+- **have the same type of reporters / users**
+
+    this is not the case when a team has to implement a new feature in some common code which is used by many other teams (so the users are members of other teams), but at the same time they have to develop a product which is used by the customers of the company.
+    
+- **be about similiar business domain**
+
+    this way the team can have strong focus on a specific domain, which will result higher quality.
+    
+## The inner source pattern
+
+One important note is, that all of this doesn't mean that such teams are not allowed to contribute to projects outside of their domain. This would cause major slow down when some parts of the common code get lots of feature requests, and the owner team does not have enough resources to handle them all. This problem is solved by the *inner source pattern*.
+
+It means that the whole codebase is available for each team. Anyone can contribute to any project, but only with the approval of the owner team, which has to take the responsibility for all the changes.
+
+## Summary
+
+Domain-driven teams are responsible for code pieces (projects) with same complexity level, same users and similiar business domain. They can contribute to other parts as well, but only with the approval of the owner team, which has to take the responsibility for all the changes. Such organization can be highly effective because of the low level of duplicated efforts, and the stronger focus of teams on a specific business domain.

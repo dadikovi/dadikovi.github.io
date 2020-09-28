@@ -21,11 +21,11 @@ h6 {
     font-size: 1.1rem;
 }
 
-ul {
+.home ul {
    list-style-type: none;
 }
 
-ul li {
+.home ul li {
     margin-bottom: 15px;
 }
 
@@ -34,7 +34,7 @@ nav a {
 }
 
 footer {
-    position: absolute;
+    position: relative;
     left: 0px;
     right: 0px;
     bottom: 0px;
@@ -50,6 +50,10 @@ footer {
     color: #D64C38 !important;
 }
 
+.bg-green {
+    background-color: #6B8F63 !important;
+}
+
 .bg-dark {
     background-color: rgb(50, 45, 40) !important;
 }
@@ -61,4 +65,8 @@ footer {
 
 .post-content {
     max-width: 800px;
+}
+
+.progress {
+    background-color: transparent !important;
 }
