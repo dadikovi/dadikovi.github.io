@@ -7,9 +7,9 @@ comments: true
 ---
 One of the great advantages of an agile organization is that the teams are loosely coupled, and they can execute the whole end-to-end process of the implementation lifecycle independently of other teams. This feature eliminates unnecessary waits, so the team can deliver much faster, making it one of the keys of success in large enterprises.
 
-I think there is a common misconception about this *end-to-end team* principle, especially in companies where agile is taken as a silverbullet for all the problems. The misconception is that such a team should build basically anything from scratch which is needed for its work, like a subcontractor of the company who has to build all of the components and a full development infrastructure independently from the company.
+I think there is a common misconception about this *end-to-end team* principle, especially in companies where agile is taken as a silverbullet for all the problems. The misconception is that such a team should build basically anything from scratch which is needed for its work, just as a subcontractor of the company who has to build all of the components and a full development infrastructure independently from the company.
 
-While this approach do have some advantages (for example there is not a single point of failure infrastructure which can stop the work of all teams when breaking), mostly it just causes lots of extra work, and at the end of the day just degrades the efficiency of the teams, oppositely to the original intentions.
+While this approach do have some advantages (for example there is not a single point of failure which can stop the work of all teams when breaking), mostly it just causes lots of extra work, and at the end of the day just degrades the efficiency of the teams, oppositely to the original intentions.
 
 ## Domain-driven end to end teams
 
@@ -29,7 +29,7 @@ My opinion is that it is much better to organize people around a specific domain
     
 ## The inner source pattern
 
-One important note is, that all of this doesn't mean that such teams are not allowed to contribute to projects outside of their domain. This would cause major slow down when some parts of the common code get lots of feature requests, and the owner team does not have enough resources to handle them all. This problem is solved by the *inner source pattern*.
+All of this doesn't mean that such teams are not allowed to contribute to projects outside of their domain. This would cause major slow down when some parts of the common code get lots of feature requests, and the owner team does not have enough resources to handle them all. This problem is solved by the *inner source pattern*.
 
 It means that the whole codebase is available for each team. Anyone can contribute to any project, but only with the approval of the owner team, which has to take the responsibility for all the changes.
 
