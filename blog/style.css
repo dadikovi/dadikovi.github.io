@@ -63,8 +63,12 @@ footer {
     top: -5px;
 }
 
-.post-content {
+.post-content, #disqus_thread {
     max-width: 800px;
+}
+
+.post-content {
+    margin-bottom: 50px;
 }
 
 .progress {

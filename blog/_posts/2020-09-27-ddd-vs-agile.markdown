@@ -3,6 +3,7 @@ layout: post
 title:  "Domain-driven teams in agile organizations"
 date:   2020-09-27 15:34:19 +0200
 categories: org
+comments: true
 ---
 One of the great advantages of an agile organization is that the teams are loosely coupled, and they can execute the whole end-to-end process of the implementation lifecycle independently of other teams. This feature eliminates unnecessary waits, so the team can deliver much faster, making it one of the keys of success in large enterprises.
 
