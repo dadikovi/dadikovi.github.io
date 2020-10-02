@@ -1,8 +1,80 @@
-header {
+html, body {
+    height: 100%;
+}
+
+body {
+    font-family: "Noto Sans JP" !important;
+    background-color: #f5efdf;
+    font-size: 1.1rem;
+}
+
+body > header {
     background: url(images/world-pattern.jpg);
     background-size: 30%;
 }
 
+h1, h2 {
+    font-family: "Lora" !important;
+}
+
+h6 {
+    font-size: 1.1rem;
+}
+
+.home ul {
+   list-style-type: none;
+}
+
+.home ul li {
+    margin-bottom: 15px;
+}
+
 nav a {
     text-decoration: none;
+}
+
+footer {
+    position: relative;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+}
+
+.back-to-home-link {
+    position: relative;
+    top: -25px;
+}
+
+/* Custom color */
+.text-primary, a, .post-content h2 {
+    color: #D64C38 !important;
+}
+
+code {
+    color: #6B8F63 !important;
+}
+
+.bg-green {
+    background-color: #6B8F63 !important;
+}
+
+.bg-dark {
+    background-color: rgb(50, 45, 40) !important;
+}
+
+.text-secondary {
+    position: relative;
+    top: -5px;
+}
+
+.post-content, #disqus_thread {
+    max-width: 800px;
+}
+
+.post-content {
+    margin-bottom: 50px;
+}
+
+.progress {
+    background-color: transparent !important;
 }
