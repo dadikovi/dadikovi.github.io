@@ -12,7 +12,7 @@ layout: default
             </li>
             <li>
                 <h6 class="text-primary">Senior Software Engineer @ <a href="http://loxon.eu">Loxon</a></h6>
-                <span class="text-secondary">2016 – 2020</span>
+                <span class="text-secondary">2016 – 2020 • <a href="{{ "/me/2020/10/13/my-work-at-loxon.html" | absolute_path }}">my work at Loxon</a></span>
             </li>
             <li>
                 <h6 class="text-primary">Computer Science Engineer BSc @ Budapest University of Technology and Economics</h6>
@@ -44,8 +44,33 @@ layout: default
             </li>
             {%- endfor -%}
         </ul>
-
         {%- endif -%}
+        {% if site.paginate %}
+        <div class="pagination">
+
+                {% if paginator.previous_page %}
+                <div class="pagination-button bg-dark">
+                    <a href="{{ paginator.previous_page_path }}" class="previous">&laquo;</a>
+                </div>
+                {% else %}
+                <div class="pagination-button bg-dark disabled">
+                    <a href="#" class="previous">&laquo;</a>
+                </div>
+                {% endif %}
+            <div class="pagination-button bg-dark">
+                <span class="page_number">Pages: {{ paginator.page }} / {{ paginator.total_pages }}</span>
+            </div>
+                {% if paginator.next_page %}
+                <div class="pagination-button bg-dark">
+                    <a href="{{ paginator.next_page_path }}" class="next">&raquo;</a>
+                </div>
+                {% else %}
+                <div class="pagination-button bg-dark disabled">
+                    <a href="#" class="previous disabled">&raquo;</a>
+                </div>
+                {% endif %}
+        </div>
+        {% endif %}
     </div>
 </div>
 <div class="row home">

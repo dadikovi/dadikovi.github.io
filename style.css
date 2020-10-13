@@ -82,6 +82,35 @@ code {
 .post-category {
     color: white;
     padding: 0px 4px;
-    border-radius: 2px;
+    border-radius: 4px;
     margin-right: 10px;
+}
+
+/* Pagination */
+
+.pagination {
+    display: flex;
+    justify-content: center;
+}
+
+.pagination .pagination-button:hover, .pagination .pagination-button.disabled {
+    opacity: 50%;
+}
+
+.pagination .pagination-button {
+    color: white;
+    padding: 5px 10px;
+}
+
+.pagination .pagination-button a {
+    color: white !important;
+    text-decoration: none;
+}
+
+.pagination .pagination-button:first-child {
+    border-radius: 4px 0px 0px 4px;
+}
+
+.pagination .pagination-button:last-child {
+    border-radius: 0px 4px 4px 0px;
 }

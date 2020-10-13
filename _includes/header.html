@@ -1,9 +1,8 @@
-{% include base.html %}
 <header class="text-white py-2">
     <div class="container">
         <div class="row align-items-center">
             <div class="col-md-2">
-                <a href="/"><img class="rounded-circle img-fluid" src="{{base}}/images/me.jpg" alt="Profile Photo" style="width: 80%" /></a>
+                <a href="/"><img class="rounded-circle img-fluid" src="{{ "/images/me.jpg" | absolute_url }}" alt="Profile Photo" style="width: 80%" /></a>
             </div>
             <div class="col-md-10">
                 <h1>Dávid Kovács</h1>
