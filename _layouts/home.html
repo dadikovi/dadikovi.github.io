@@ -37,10 +37,10 @@ layout: default
                         {{ post.title | escape }}
                     </a>
                 </h6>
-                <span class="text-secondary">{{ post.date | date: date_format }}</span>
-                {%- if site.show_excerpts -%}
-                {{ post.excerpt }}
-                {%- endif -%}
+                <span class="text-secondary">
+                    <span class="post-category bg-green">{{ post.categories }}</span>
+                    {{ post.date | date: date_format }}
+                </span>
             </li>
             {%- endfor -%}
         </ul>

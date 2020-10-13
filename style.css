@@ -72,9 +72,16 @@ code {
 }
 
 .post-content {
-    margin-bottom: 50px;
+    margin: 30px 0px 50px 0px;
 }
 
 .progress {
     background-color: transparent !important;
+}
+
+.post-category {
+    color: white;
+    padding: 0px 4px;
+    border-radius: 2px;
+    margin-right: 10px;
 }
