@@ -1,3 +1,9 @@
+:root {
+    --color-red: #D64C38;
+    --color-green: #6B8F63;
+    --color-blue: rgb(35, 80, 95);
+}
+
 html, body {
     height: 100%;
 }
@@ -45,6 +51,20 @@ footer {
     top: -25px;
 }
 
+h2::after {
+    content: '//';
+    color: var(--color-blue);
+    font-weight: bold;
+    font-size: 20px;
+    position: relative;
+    left: 20px;
+    bottom: 5px;
+}
+
+.post-content h2::after {
+    content: '';
+}
+
 /* Custom color */
 .text-primary, a, .post-content h2 {
     color: #D64C38 !important;
@@ -90,7 +110,8 @@ code {
 
 .pagination {
     display: flex;
-    justify-content: center;
+    justify-content: start;
+    padding-left: 30px;
 }
 
 .pagination .pagination-button:hover, .pagination .pagination-button.disabled {

@@ -12,7 +12,7 @@ layout: default
             </li>
             <li>
                 <h6 class="text-primary">Senior Software Engineer @ <a href="http://loxon.eu">Loxon</a></h6>
-                <span class="text-secondary">2016 – 2020 • <a href="{{ "/me/2020/10/13/my-work-at-loxon.html" | absolute_path }}">my work at Loxon</a></span>
+                <span class="text-secondary">2016 – 2020 • <a href="{{ "/me/my-work-at-loxon.html" | absolute_path }}">my work at Loxon</a></span>
             </li>
             <li>
                 <h6 class="text-primary">Computer Science Engineer BSc @ Budapest University of Technology and Economics</h6>
@@ -39,7 +39,19 @@ layout: default
                 </h6>
                 <span class="text-secondary">
                     <span class="post-category bg-green">{{ post.categories }}</span>
-                    {{ post.date | date: date_format }}
+                    {{ post.date | date: date_format }} •
+                    {% capture words %}
+                      {{ post.content | number_of_words | minus: 180 }}
+                   {% endcapture %}
+                   {% unless words contains "-" %}
+                     {% assign minutes = words | plus: 180 | divided_by: 180 %}
+                        {{ minutes }}
+                     {% if minutes == 1 %}
+                        {{ " minute to read" }}
+                     {% else %}
+                        {{ " minutes to read" }}
+                     {% endif %}
+                   {% endunless %}
                 </span>
             </li>
             {%- endfor -%}
