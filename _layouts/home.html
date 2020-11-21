@@ -2,43 +2,24 @@
 layout: default
 ---
 
-<div class="row home">
-    <div class="col-md mb-5">
-        <h2 class="mb-5">Education and Experience</h2>
-        <ul>
-            <li>
-                <h6 class="text-primary">Java Developer @ <a href="http://transferwise.com">Transferwise</a></h6>
-                <span class="text-secondary">2020 – present</span>
-            </li>
-            <li>
-                <h6 class="text-primary">Senior Software Engineer @ <a href="http://loxon.eu">Loxon</a></h6>
-                <span class="text-secondary">2016 – 2020 • <a href="{{ "/me/my-work-at-loxon.html" | absolute_path }}">my work at Loxon</a></span>
-            </li>
-            <li>
-                <h6 class="text-primary">Computer Science Engineer BSc @ Budapest University of Technology and Economics</h6>
-                <span class="text-secondary">2013 - 2017</span>
-            </li>
-        </ul>
-    </div>
-    <div class="col-md mb-5">
-        <h2 class="mb-5">Blog</h2>
-        {% if site.paginate %}
-        {% assign posts = paginator.posts %}
-        {% else %}
-        {% assign posts = site.posts %}
-        {% endif %}
-        {%- if posts.size > 0 -%}
-        <ul class="post-list">
-            {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
-            {%- for post in posts -%}
-            <li>
-                <h6 class="text-primary">
-                    <a class="post-link" href="{{ post.url | relative_url }}">
-                        {{ post.title | escape }}
-                    </a>
-                </h6>
-                <span class="text-secondary">
-                    <span class="post-category bg-green">{{ post.categories }}</span>
+<h2 class="mb-5">Blog</h2>
+{% if site.paginate %}
+{% assign posts = paginator.posts %}
+{% else %}
+{% assign posts = site.posts %}
+{% endif %}
+{%- if posts.size > 0 -%}
+<ul class="post-list">
+    {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+    {%- for post in posts -%}
+    <li>
+        <h6 class="text-primary">
+            <a class="post-link" href="{{ post.url | relative_url }}">
+                {{ post.title | escape }}
+            </a>
+        </h6>
+        <span class="text-secondary">
+                    <span class="post-category bg-accent">{{ post.categories }}</span>
                     {{ post.date | date: date_format }} •
                     {% capture words %}
                       {{ post.content | number_of_words | minus: 180 }}
@@ -53,72 +34,33 @@ layout: default
                      {% endif %}
                    {% endunless %}
                 </span>
-            </li>
-            {%- endfor -%}
-        </ul>
-        {%- endif -%}
-        {% if site.paginate %}
-        <div class="pagination">
+    </li>
+    {%- endfor -%}
+</ul>
+{%- endif -%}
+{% if site.paginate %}
+<div class="pagination">
 
-                {% if paginator.previous_page %}
-                <div class="pagination-button bg-dark">
-                    <a href="{{ paginator.previous_page_path }}" class="previous">&laquo;</a>
-                </div>
-                {% else %}
-                <div class="pagination-button bg-dark disabled">
-                    <a href="#" class="previous">&laquo;</a>
-                </div>
-                {% endif %}
-            <div class="pagination-button bg-dark">
-                <span class="page_number">Pages: {{ paginator.page }} / {{ paginator.total_pages }}</span>
-            </div>
-                {% if paginator.next_page %}
-                <div class="pagination-button bg-dark">
-                    <a href="{{ paginator.next_page_path }}" class="next">&raquo;</a>
-                </div>
-                {% else %}
-                <div class="pagination-button bg-dark disabled">
-                    <a href="#" class="previous disabled">&raquo;</a>
-                </div>
-                {% endif %}
-        </div>
-        {% endif %}
+    {% if paginator.previous_page %}
+    <div class="pagination-button pagination-button-hover bg-accent">
+        <a href="{{ paginator.previous_page_path }}" class="previous">&laquo;</a>
     </div>
+    {% else %}
+    <div class="pagination-button pagination-button-hover bg-accent disabled">
+        <a href="#" class="previous">&laquo;</a>
+    </div>
+    {% endif %}
+    <div class="pagination-button bg-accent">
+        <span class="page_number">Pages: {{ paginator.page }} / {{ paginator.total_pages }}</span>
+    </div>
+    {% if paginator.next_page %}
+    <div class="pagination-button pagination-button-hover bg-accent">
+        <a href="{{ paginator.next_page_path }}" class="next">&raquo;</a>
+    </div>
+    {% else %}
+    <div class="pagination-button pagination-button-hover bg-accent disabled">
+        <a href="#" class="previous disabled">&raquo;</a>
+    </div>
+    {% endif %}
 </div>
-<div class="row home">
-    <div class="col-md mb-5">
-        <h2 class="mb-5">Skills</h2>
-        <div class="progress mb-4" style="height:25px;">
-            <div class="progress-bar bg-green text-left pl-2" role="progressbar" style="width: 85%" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100">Java</div>
-        </div>
-        <div class="progress mb-4" style="height:25px;">
-            <div class="progress-bar bg-green text-left pl-2" role="progressbar" style="width: 75%" aria-valuenow="89" aria-valuemin="0" aria-valuemax="100">Spring</div>
-        </div>
-        <div class="progress mb-4" style="height:25px;">
-            <div class="progress-bar bg-green text-left pl-2" role="progressbar" style="width: 75%" aria-valuenow="87" aria-valuemin="0" aria-valuemax="100">Microservices</div>
-        </div>
-        <div class="progress mb-4" style="height:25px;">
-            <div class="progress-bar bg-green text-left pl-2" role="progressbar" style="width: 70%" aria-valuenow="87" aria-valuemin="0" aria-valuemax="100">Angular</div>
-        </div>
-        <div class="progress mb-4" style="height:25px;">
-            <div class="progress-bar bg-green text-left pl-2" role="progressbar" style="width: 65%" aria-valuenow="87" aria-valuemin="0" aria-valuemax="100">Typescript</div>
-        </div>
-    </div>
-    <div class="col-md">
-        <h2 class="mb-5">Fun projects</h2>
-        <ul>
-            <li>
-                <h6 class="text-primary">Contributor @ <a href="http://spring.io">Spring Security</a></h6>
-                <span class="text-secondary">2020 – present</span>
-            </li>
-            <li>
-                <h6 class="text-primary"><a href="https://github.com/dadikovi/jira-pipeline">jira-pipeline</a></h6>
-                <span class="text-secondary">2018 • Python</span>
-            </li>
-            <li>
-                <h6 class="text-primary"><a href="https://github.com/dadikovi/markdown-webserver">markdown-webserver</a></h6>
-                <span class="text-secondary">2018 • NodeJS</span>
-            </li>
-        </ul>
-    </div>
-</div>
+{% endif %}

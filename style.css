@@ -1,26 +1,86 @@
 :root {
-    --color-red: #D64C38;
-    --color-green: #6B8F63;
-    --color-blue: rgb(35, 80, 95);
+    --color-text: #bababa !important;
+    --color-secondary: #e9bf67;
+    --color-primary: #6697bc !important;
+    --color-nav: #444;
+    --color-background: #2b2b2b;
+
+    --font-noto: "Noto Sans JP" !important;
+    --font-lora: "Lora" !important;
 }
+
+/* Layout */
 
 html, body {
     height: 100%;
 }
 
 body {
-    font-family: "Noto Sans JP" !important;
-    background-color: #f5efdf;
+    font-family: var(--font-noto);
+    background-color: var(--color-background);
     font-size: 1.1rem;
+    color: var(--color-text);
 }
 
 body > header {
-    background: url(images/world-pattern.jpg);
-    background-size: 30%;
+    margin-top: 5px;
+}
+
+body > header > div {
+    background-color: var(--color-nav);
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px;
+}
+
+nav li {
+    display: inline-block;
+    padding: 4px 20px;
+}
+
+nav a {
+    color: var(--color-secondary) !important;
+    position: relative;
+}
+
+nav a:hover li::after {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    bottom: -5px;
+    height: 2px;
+    background-color: var(--color-secondary);
+}
+
+/* Fonts */
+
+abbr[title] {
+    text-decoration: none;
+    border-bottom: 2px dotted;
+    color: var(--color-primary);
+}
+
+li::marker {
+    color: var(--color-secondary);
+}
+
+h1.title {
+    font-family: var(--font-noto);
+    font-weight: bold;
+    margin: 0px;
+    padding: 0px 10px;
+    line-height: 35px;
+    background-color: var(--color-background);
+    color: var(--color-nav);
 }
 
 h1, h2 {
-    font-family: "Lora" !important;
+    font-family: var(--font-lora);
 }
 
 h6 {
@@ -53,7 +113,7 @@ footer {
 
 h2::after {
     content: '//';
-    color: var(--color-blue);
+    color: var(--color-secondary);
     font-weight: bold;
     font-size: 20px;
     position: relative;
@@ -67,15 +127,15 @@ h2::after {
 
 /* Custom color */
 .text-primary, a, .post-content h2 {
-    color: #D64C38 !important;
+    color: var(--color-primary) !important;
 }
 
 code {
-    color: #6B8F63 !important;
+    color: var(--color-secondary) !important;
 }
 
-.bg-green {
-    background-color: #6B8F63 !important;
+.bg-accent {
+    background-color: var(--color-nav) !important;
 }
 
 .bg-dark {
@@ -87,6 +147,8 @@ code {
     top: -5px;
 }
 
+/* Posts */
+
 .post-content, #disqus_thread {
     max-width: 800px;
 }
@@ -95,12 +157,7 @@ code {
     margin: 30px 0px 50px 0px;
 }
 
-.progress {
-    background-color: transparent !important;
-}
-
 .post-category {
-    color: white;
     padding: 0px 4px;
     border-radius: 4px;
     margin-right: 10px;
@@ -114,12 +171,11 @@ code {
     padding-left: 30px;
 }
 
-.pagination .pagination-button:hover, .pagination .pagination-button.disabled {
+.pagination .pagination-button-hover:hover, .pagination .pagination-button.disabled {
     opacity: 50%;
 }
 
 .pagination .pagination-button {
-    color: white;
     padding: 5px 10px;
 }
 

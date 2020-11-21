@@ -1,13 +1,12 @@
 title: Dávid Kovács
 email: dadikovi@gmail.com
-description: Java Developer
 site:
   url: http://dadikovi.github.io
   baseurl: ""
 
 # Build settings
 theme: minima
-paginate: 3
+paginate: 10
 paginate_path: "/blog/page/:num"
 permalink: /:categories/:title:output_ext
 plugins:
