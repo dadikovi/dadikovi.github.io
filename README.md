@@ -1,2 +1,3 @@
-# dadikovi.github.io
-My github.io page
+This is my blog.
+
+`bundler exec jekyll serve`

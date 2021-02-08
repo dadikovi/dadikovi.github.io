@@ -1,0 +1,9 @@
+
+{% unless post %}
+{% assign post = page  %}
+{% endunless %}
+
+<h4>{{ post.categories }}</h4>
+<h2>
+    <a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
+</h2>

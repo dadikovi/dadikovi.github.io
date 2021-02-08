@@ -2,65 +2,21 @@
 layout: default
 ---
 
-<h2 class="mb-5">Blog</h2>
-{% if site.paginate %}
-{% assign posts = paginator.posts %}
-{% else %}
 {% assign posts = site.posts %}
-{% endif %}
 {%- if posts.size > 0 -%}
-<ul class="post-list">
-    {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+<ul class="post-list row">
     {%- for post in posts -%}
-    <li>
-        <h6 class="text-primary">
-            <a class="post-link" href="{{ post.url | relative_url }}">
-                {{ post.title | escape }}
-            </a>
-        </h6>
-        <span class="text-secondary">
-                    <span class="post-category bg-accent">{{ post.categories }}</span>
-                    {{ post.date | date: date_format }} •
-                    {% capture words %}
-                      {{ post.content | number_of_words | minus: 180 }}
-                   {% endcapture %}
-                   {% unless words contains "-" %}
-                     {% assign minutes = words | plus: 180 | divided_by: 180 %}
-                        {{ minutes }}
-                     {% if minutes == 1 %}
-                        {{ " minute to read" }}
-                     {% else %}
-                        {{ " minutes to read" }}
-                     {% endif %}
-                   {% endunless %}
-                </span>
+    <li class="col-xxl-4 col-xl-6">
+        <div class="post-card">
+            <div class="post-image"></div>
+            <div class="post-card-content">
+                {%- include post-header.html -%}
+                <p>{{ post.excerpt }}</p>
+                {%- include post-meta.html -%}
+            </div>
+
+        </div>
     </li>
     {%- endfor -%}
 </ul>
-{%- endif -%}
-{% if site.paginate %}
-<div class="pagination">
-
-    {% if paginator.previous_page %}
-    <div class="pagination-button pagination-button-hover bg-accent">
-        <a href="{{ paginator.previous_page_path }}" class="previous">&laquo;</a>
-    </div>
-    {% else %}
-    <div class="pagination-button pagination-button-hover bg-accent disabled">
-        <a href="#" class="previous">&laquo;</a>
-    </div>
-    {% endif %}
-    <div class="pagination-button bg-accent">
-        <span class="page_number">Pages: {{ paginator.page }} / {{ paginator.total_pages }}</span>
-    </div>
-    {% if paginator.next_page %}
-    <div class="pagination-button pagination-button-hover bg-accent">
-        <a href="{{ paginator.next_page_path }}" class="next">&raquo;</a>
-    </div>
-    {% else %}
-    <div class="pagination-button pagination-button-hover bg-accent disabled">
-        <a href="#" class="previous disabled">&raquo;</a>
-    </div>
-    {% endif %}
-</div>
 {% endif %}

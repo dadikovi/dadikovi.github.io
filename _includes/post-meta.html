@@ -1,0 +1,21 @@
+
+{% unless post %}
+{% assign post = page  %}
+{% endunless %}
+
+<small>
+    {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+    {{ post.date | date: date_format }} •
+    {% capture words %}
+    {{ post.content | number_of_words | minus: 180 }}
+    {% endcapture %}
+    {% unless words contains "-" %}
+    {% assign minutes = words | plus: 180 | divided_by: 180 %}
+    {{ minutes }}
+    {% if minutes == 1 %}
+    {{ " minute to read" }}
+    {% else %}
+    {{ " minutes to read" }}
+    {% endif %}
+    {% endunless %}
+</small>

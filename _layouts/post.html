@@ -1,24 +1,18 @@
 ---
 layout: default
 ---
-<article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
-    <span class="back-to-home-link"><a href="/">« back to home</a></span>
-    <header class="post-header">
-        <h1 class="post-title p-name" itemprop="name headline">{{ page.title | escape }}</h1>
-        <span class="text-secondary">
-            <span class="post-category bg-accent">{{ page.categories }}</span>
-            {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
-            {{ page.date | date: date_format }}
-        </span>
-    </header>
+<article class="col-xxl-7 col-xl-9 post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+    {%- include post-header.html -%}
+    {%- include post-meta.html -%}
 
     <div class="post-content e-content" itemprop="articleBody">
         {{ content }}
     </div>
 
     {% if page.comments %}
-    <h1>Comments</h1>
-    <span class="text-secondary">If you have any feedback about this post, please share it.</span>
+    <h2>Comments</h2>
+    <small>If you have any feedback about this post, please share it.</small>
     <div id="disqus_thread"></div>
     <script>
         var disqus_config = function () {
