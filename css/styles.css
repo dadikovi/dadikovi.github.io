@@ -44,10 +44,15 @@ a:hover {
     padding: 16px;
 }
 
-.post-card .post-image {
+.post-card .post-card-image {
     border-radius: 8px 8px 0px 0px;
     background-color: var(--color-secondary);
-    height: 4px;
+    min-height: 4px;
+}
+
+.post-card img {
+    border-radius: 8px 8px 0px 0px;
+    width: 100%;
 }
 
 .post-card h4, .post h4 {
@@ -71,6 +76,27 @@ a:hover {
 
 .post-content {
     margin-top: 30px;
+}
+
+blockquote {
+    background-color: var(--color-card-background);
+    padding: 1rem;
+    font-style: italic;
+    color: var(--color-primary);
+    border-left: 10px solid var(--color-primary);
+}
+
+blockquote p:last-child {
+    margin-bottom: 0px;
+}
+
+.post-image {
+    padding: 1rem;
+    margin: 2rem 0rem;
+}
+
+.post-image img {
+    width: 100%;
 }
 
 /* Other */
@@ -99,6 +125,6 @@ a:hover {
     background-color: var(--color-primary);
 }
 
-p {
+p, li {
     font-size: 1.2rem;
 }

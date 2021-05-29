@@ -8,7 +8,11 @@ layout: default
     {%- for post in posts -%}
     <li class="col-xxl-4 col-xl-6">
         <div class="post-card">
-            <div class="post-image"></div>
+            <div class="post-card-image">
+                {% if post.image %}
+                <img src="{{ "images/" | append: post.image | absolute_url }}" />
+                {% endif %}
+            </div>
             <div class="post-card-content">
                 {%- include post-header.html -%}
                 <p>{{ post.excerpt }}</p>
